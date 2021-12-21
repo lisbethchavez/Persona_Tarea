@@ -24,7 +24,7 @@ namespace AccesoaDatos01
             //SqlConnection conexion = new SqlConnection(@"server=L-ELR-029;database=TI2021; user id=sa; password=isa");
 
 
-            SqlConnection conexion = new SqlConnection(@"server=DESKTOP-83B08MV\SQLEXPRESS;database=TI2021; Integrated Security=true");
+            SqlConnection conexion = new SqlConnection(@"server=L-ELR-029\SQLEXPRESS01;database=TI2021; Integrated Security=true");
 
             //2. Definir una operacion 
             string sql = "insert into personas(cedula,apellidos,nombres,fechaNacimiento,peso) ";
@@ -53,20 +53,7 @@ namespace AccesoaDatos01
             conexion.Close();
 
             MessageBox.Show("Filas insertadas: " + res.ToString());
-
-            try
-            {
-                MessageBox.Show("DATOS GUARDADOS CORRECTAMENTE", "DATOS GUARDADOS", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-            catch (Exception e2)
-            {
-                MessageBox.Show(e2.Message);
-            }
-            finally
-            {
-                this.label2.Text = "DEBES CORREGIR EL ERROR";
-            }
+          
 
         }
     }
