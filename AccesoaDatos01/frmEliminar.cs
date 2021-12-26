@@ -24,7 +24,7 @@ namespace AccesoaDatos01
         {
             conexion.Open();
             int cant = 0;
-            string cadena = "Delete from personas where cedula= " + txtCedula.Text;
+            string cadena = "Delete from personas where cedula=@cedula " + txtCedula.Text;
             SqlCommand comando = new SqlCommand(cadena,conexion);
             cant = comando.ExecuteNonQuery();
 
