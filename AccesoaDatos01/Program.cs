@@ -16,7 +16,7 @@ namespace AccesoaDatos01
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmIngreso());
+            Application.Run(new frmActualizar());
         }
     }
 }
