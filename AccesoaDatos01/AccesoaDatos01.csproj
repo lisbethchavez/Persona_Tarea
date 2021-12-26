@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmActualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmActualizar.Designer.cs">
+      <DependentUpon>frmActualizar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBuscar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmActualizar.resx">
+      <DependentUpon>frmActualizar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBuscar.resx">
       <DependentUpon>frmBuscar.cs</DependentUpon>
     </EmbeddedResource>

@@ -11,34 +11,40 @@ using System.Windows.Forms;
 
 namespace AccesoaDatos01
 {
-    public partial class frmEliminar : Form
+    public partial class frmActualizar : Form
     {
         SqlConnection conexion = new SqlConnection(@"server=DESKTOP-83B08MV\SQLEXPRESS;database=TI2021; Integrated Security=true");
-        public frmEliminar()
+        public frmActualizar()
         {
             InitializeComponent();
         }
 
-        
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnActualizar_Click(object sender, EventArgs e)
         {
             conexion.Open();
-            int cant = 0;
-            string cadena = "Delete from personas where cedula= " + txtCedula.Text;
-            SqlCommand comando = new SqlCommand(cadena,conexion);
-            cant = comando.ExecuteNonQuery();
 
+            string cedula = txtCedula.Text;
+            string apellidos = txtApellidos.Text;
+            string nombres = txtNombres.Text;
+            string fechaNacimiento = dateTimePicker1.Text;
+            string peso = txtPeso.Text;
+            int cant;
+
+            string cadena = "update personas set apellidos=@apellidos,nombres=@nombres,fechaNacimiento=@fechaNacimiento,peso=@peso where cedula=@cedula";
+            SqlCommand comando = new SqlCommand(cadena, conexion);
+            cant = comando.ExecuteNonQuery(); 
             if(cant==1)
             {
-                MessageBox.Show("¿Está segur@ de eliminar este registro?");
+                MessageBox.Show("Se actualizó correctamente el registro");
             }
             else
             {
-                MessageBox.Show("Esta persona no se encuentra ingresada en la base de datos");
+                MessageBox.Show("Esta persona no se encuentra ingresada");
             }
-            conexion.Close();
-            txtCedula.Text = "";
+            conexion.Close(); 
+
            
+            
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
