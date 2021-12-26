@@ -57,7 +57,7 @@ namespace AccesoaDatos01
 
             SqlDataAdapter ad1 = new SqlDataAdapter(comando);
 
-            //pasar los datos desde el adaptador a un datatable
+            //Nota: pasar los datos desde el adaptador a un datatable
             DataTable dt = new DataTable();
             ad1.Fill(dt);
 
