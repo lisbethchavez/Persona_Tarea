@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Personas.cs" />
     <Compile Include="frmActualizar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,11 +59,23 @@
     <Compile Include="frmBuscar.Designer.cs">
       <DependentUpon>frmBuscar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmConsultaPorPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaPorPersona.Designer.cs">
+      <DependentUpon>frmConsultaPorPersona.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEliminar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmEliminar.Designer.cs">
       <DependentUpon>frmEliminar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGetPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGetPersona.Designer.cs">
+      <DependentUpon>frmGetPersona.cs</DependentUpon>
     </Compile>
     <Compile Include="frmIngreso.cs">
       <SubType>Form</SubType>
@@ -78,8 +91,14 @@
     <EmbeddedResource Include="frmBuscar.resx">
       <DependentUpon>frmBuscar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaPorPersona.resx">
+      <DependentUpon>frmConsultaPorPersona.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEliminar.resx">
       <DependentUpon>frmEliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGetPersona.resx">
+      <DependentUpon>frmGetPersona.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmIngreso.resx">
       <DependentUpon>frmIngreso.cs</DependentUpon>

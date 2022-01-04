@@ -20,39 +20,17 @@ namespace AccesoaDatos01
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            //1. Crear la conexión
-            //SqlConnection conexion = new SqlConnection(@"server=L-ELR-029;database=TI2021; user id=sa; password=isa");
 
+            int res = Clases.Personas.insertar(this.txtCedula.Text, this.txtApellidos.Text, this.txtNombres.Text, Convert.ToDateTime(this.dateTimePicker1.Text),Convert.ToDouble(this.txtPeso.Text));
 
-            SqlConnection conexion = new SqlConnection(@"server=L-ELR-029\SQLEXPRESS01;database=TI2021; Integrated Security=true");
-
-            //2. Definir una operacion 
-            string sql = "insert into personas(cedula,apellidos,nombres,fechaNacimiento,peso) ";
-            sql += "values (@cedula,@apellidos,@nombres,@fechaNacimiento,@peso)";
-
-            //3. Ejecutar la operacion 
-            SqlCommand comando = new SqlCommand(sql, conexion);
-
-            //3.1 configurar los parametros:@cedula,@apellidos,@nombres,@fechaNacimiento,@peso
-
-            comando.Parameters.Add(new SqlParameter("@cedula", this.txtCedula.Text));
-            comando.Parameters.Add(new SqlParameter("@apellidos", this.txtApellidos.Text));
-            comando.Parameters.Add(new SqlParameter("@nombres", this.txtNombres.Text));
-            comando.Parameters.Add(new SqlParameter("@fechaNacimiento", this.dateTimePicker1.Value));
-            comando.Parameters.Add(new SqlParameter("@peso", this.txtPeso.Text));
-
-            //3.2 Abrir conexion 
-
-            conexion.Open();
-
-            //3.3 Insertar el registro en la base de datos BDD
-
-            int res = comando.ExecuteNonQuery();
-
-            //4. Cerrar la conexion 
-            conexion.Close();
 
             MessageBox.Show("Filas insertadas: " + res.ToString());
+
+            if (res > 0)
+                MessageBox.Show("Registro Agregado con exito...");
+            else
+                MessageBox.Show("No se pudo insertar el registro....");
+
           
 
         }

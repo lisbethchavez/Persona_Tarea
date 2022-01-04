@@ -33,7 +33,7 @@ namespace AccesoaDatos01
         /// <returns></returns>
         private DataTable getPersona(string cedula = "")
         {
-            SqlConnection conexion = new SqlConnection(@"server=L-ELR-029\SQLEXPRESS01;database=TI2021; Integrated Security=true");
+            SqlConnection conexion = new SqlConnection(@"server=DESKTOP-83B08MV\SQLEXPRESS;database=TI2021; Integrated Security=true");
 
             string sql = "";
             if (cedula == "") //si no hay cedula
