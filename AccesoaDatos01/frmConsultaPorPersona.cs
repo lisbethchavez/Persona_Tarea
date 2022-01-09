@@ -13,35 +13,28 @@ namespace AccesoaDatos01
 {
     public partial class frmConsultaPorPersona : Form
     {
-        SqlConnection conexion = new SqlConnection(@"server=DESKTOP-83B08MV\SQLEXPRESS ; database=TI2021 ; integrated security = true");
+        
         private string mCedula;
         public frmConsultaPorPersona(string cedula)
         {
             InitializeComponent();
-            this.mCedula = cedula;
-
-            
+            this.mCedula = cedula;       
         }
 
         private void frmConsultaPorPersona_Load(object sender, EventArgs e)
         {
             MessageBox.Show("La cédula es: " + mCedula);
 
-            string cadena = "select nombres,apellidos,fechNacimiento,peso from personas where cedula=@cedula";
-            SqlCommand comando = new SqlCommand(cadena, conexion);
-            SqlDataReader registro = comando.ExecuteReader();
-            if (registro.Read())
+            Datatable dt= Clases.Personas.seleccionar(mCedula);
+
+            foreach(DataRow row in dt.Rows)
             {
-                txtCedula.Text = registro["cedula"].ToString();
-                txtNombres.Text = registro["nombres"].ToString();
-                txtPeso.Text = registro["peso"].ToString();
-                dateTimePicker1.Text = registro["fechaNacimiento"].ToString();
-
+                this.txtCedula.Text = row["cedula"].ToString();
+                this.txtApellidos.Text = row["apellidos"].ToString();
+                this.txtNombres.Text = row["nombres"].ToString();
+                this.dateTimePicker1.Text = row["fechaNacimiento"].ToString();
+                this.txtPeso.Text = row["peso"].ToString();
             }
-            else
-                MessageBox.Show("Persona no encontrada");
-            conexion.Close();
-
 
         }
     }
