@@ -1,7 +1,7 @@
 ﻿
 namespace AccesoaDatos01
 {
-    partial class frmGetPersona
+    partial class frmGetPersona1
     {
         /// <summary>
         /// Required designer variable.
@@ -31,9 +31,9 @@ namespace AccesoaDatos01
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dgPersonas = new System.Windows.Forms.DataGridView();
-            this.btnCargar = new System.Windows.Forms.Button();
             this.linkEliminar = new System.Windows.Forms.DataGridViewLinkColumn();
             this.linkSeleccionar = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.btnCargar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgPersonas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,16 +66,6 @@ namespace AccesoaDatos01
             this.dgPersonas.TabIndex = 1;
             this.dgPersonas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPersonas_CellContentClick);
             // 
-            // btnCargar
-            // 
-            this.btnCargar.Location = new System.Drawing.Point(333, 68);
-            this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(137, 22);
-            this.btnCargar.TabIndex = 2;
-            this.btnCargar.Text = "CARGAR";
-            this.btnCargar.UseVisualStyleBackColor = true;
-            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
-            // 
             // linkEliminar
             // 
             this.linkEliminar.HeaderText = "Sección";
@@ -92,7 +82,17 @@ namespace AccesoaDatos01
             this.linkSeleccionar.Text = "Seleccionar";
             this.linkSeleccionar.UseColumnTextForLinkValue = true;
             // 
-            // frmGetPersona
+            // btnCargar
+            // 
+            this.btnCargar.Location = new System.Drawing.Point(333, 68);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(137, 22);
+            this.btnCargar.TabIndex = 2;
+            this.btnCargar.Text = "CARGAR";
+            this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
+            // 
+            // frmGetPersona1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -100,7 +100,7 @@ namespace AccesoaDatos01
             this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.dgPersonas);
             this.Controls.Add(this.label1);
-            this.Name = "frmGetPersona";
+            this.Name = "frmGetPersona1";
             this.Text = "Listado de Personas";
             ((System.ComponentModel.ISupportInitialize)(this.dgPersonas)).EndInit();
             this.ResumeLayout(false);

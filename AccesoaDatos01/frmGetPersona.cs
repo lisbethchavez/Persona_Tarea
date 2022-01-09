@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace AccesoaDatos01
 {
-    public partial class frmGetPersona : Form
+    public partial class frmGetPersona1 : Form
     {
-        public frmGetPersona()
+        public frmGetPersona1()
         {
             InitializeComponent();
         }
